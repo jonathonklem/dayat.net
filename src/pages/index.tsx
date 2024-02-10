@@ -1,193 +1,78 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const doclistStyles = {
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+import SectionBlock from "../components/SectionBlock"
+import logo from "../images/dayat-enterprises.png"
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLinks = [
+const sections = [
   {
-    text: "TypeScript Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/",
-    color: "#8954A8",
+    heading:"Mobile Application Development",
+    body:"Empower your business with the convenience and efficiency of a custom mobile application. Whether you're looking to enhance communication with your customers or streamline intra-organization interactions, we are here to bring your vision to life. With a user-friendly interface and seamless functionality, our mobile apps enable you to engage with customers like never before, while also fostering collaboration and efficiency within your organization. Let Dayat Technologies be your trusted partner in harnessing the power of mobile technology."
+  }, 
+  {
+    heading: "Enterprise Resource Management",
+    body: "We excel at crafting tailored database applications and enterprise resource management (ERM) solutions designed to meet the unique needs of your business. Our team of skilled developers works closely with you to understand your specific requirements and challenges, ensuring that the final product aligns perfectly with your goals. Whether you need a custom database application to efficiently manage your data or an ERM system to optimize your business processes, we have the expertise and experience to deliver results that exceed your expectations. With our comprehensive solutions, you can streamline operations, improve productivity, and drive growth with confidence."
   },
   {
-    text: "GraphQL Typegen Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/",
-    color: "#8954A8",
+    heading: "Automation",
+    body: "Are you tired of manual tasks consuming valuable time and resources in your business operations? We can develop tools to help you to seamlessly communicate with APIs and harness the power of data to streamline your processes. Say goodbye to tedious manual reporting and hello to efficient, data-driven decision-making. Even if you're already using several applications we can help you leverage the APIs of your existing tools so you can automate repetitive tasks, generate comprehensive reports, and gain actionable insights to drive your business forward. Let us help you unlock the full potential of automation and take your business to new heights."
+  },
+  {
+    heading: "Technologies Used",
+    body: (
+      <>
+        <i className="float-left text-8xl m-4 devicon-go-original-wordmark colored"></i>
+        <i className="float-left text-8xl m-4 devicon-react-original colored"></i>
+        <i className="float-left text-8xl m-4 devicon-amazonwebservices-plain-wordmark colored"></i>
+        <i className="float-left text-8xl m-4 devicon-laravel-original colored"></i>
+        <i className="float-left text-8xl m-4 devicon-cakephp-plain colored"></i>
+        <i className="float-left text-8xl m-4 devicon-php-plain colored"></i>
+        <i className="float-left text-8xl m-4 devicon-postgresql-plain colored"></i>
+        <i className="float-left text-8xl m-4 devicon-mysql-original colored"></i>
+        <i className="float-left text-8xl m-4 devicon-ionic-original colored"></i>
+        <i className="float-left text-8xl m-4 devicon-apple-original colored"></i>
+        <i className="float-left text-8xl m-4 devicon-android-plain colored"></i>
+        <i className="block clear-both"></i>
+      </>
+    )
+  },
+  {
+    heading: "Let's Build Something",
+    body: (
+      <a className="border-2 w-36 text-center border-white inline-block border-solid mx-auto p-4" href="mailto:info@dayat.net">Contact Us</a>
+    )
+  },
+  {
+    body: String.fromCharCode(169) + " 2024 Dayat Technologies, LLC.  All rights reserved."
   }
-]
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative" as "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/getting-started/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
 ]
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
-        update in real-time. 😎
-      </p>
-      <ul style={doclistStyles}>
-        {docLinks.map(doc => (
-          <li key={doc.url} style={docLinkStyle}>
-            <a
-              style={linkStyle}
-              href={`${doc.url}?utm_source=starter&utm_medium=ts-docs&utm_campaign=minimal-starter-ts`}
-            >
-              {doc.text}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <ul style={listStyles}>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter-ts`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
+    <>
+      <main className="font-sans max-w-4xl mx-auto mt-8 h-4/6">
+        <img className="max-w-sm" src={logo} />
+        <h1 className="mt-24 font-bold font-mont text-4xl tracking-widest px-12">
+          Your Solution Specialist
+        </h1>
+        <p className="tracking-wider px-12 mt-8 text-lg leading-loose">Since 2012, Dayat Technologies has been providing businesses of all sizes with the service they need to utilize the technology necessary to compete in today's ever-complicating market.</p>
+      </main>
+      {
+        sections.map((section, index) => {
+          return (
+            <SectionBlock
+              heading={section.heading}
+              body={section.body}
+              rowNum={index}
+            />
+          )
+        })  
+      }
+
+    </>
   )
 }
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>Dayat Technologies</title>
