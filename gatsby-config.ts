@@ -16,6 +16,13 @@ const config: GatsbyConfig = {
       "path": "./src/pages/"
     },
     __key: "pages"
+  }, {
+    resolve: "gatsby-plugin-google-gtag",
+    options: {
+      trackingIds: [
+        "G-MMCXZBL8F4", // Google Analytics / GA
+      ],
+    }
   }]
 };
 
