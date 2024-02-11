@@ -3,15 +3,22 @@ import type { HeadFC, PageProps } from "gatsby"
 
 import SectionBlock from "../components/SectionBlock"
 import logo from "../images/dayat-enterprises.png"
+import dnScreenshot from "../images/donor-nexus.jpg"
 
 const sections = [
   {
     heading:"Mobile Application Development",
     body:"Empower your business with the convenience and efficiency of a custom mobile application. Whether you're looking to enhance communication with your customers or streamline intra-organization interactions, we are here to bring your vision to life. With a user-friendly interface and seamless functionality, our mobile apps enable you to engage with customers like never before, while also fostering collaboration and efficiency within your organization. Let Dayat Technologies be your trusted partner in harnessing the power of mobile technology.",
     imageContainer: (
-      <a href="/blog/atf-gun-db/">
-        <img className="mx-4 border-2 rounded-xl border-gray-300" src="https://atfgundb.com/newscreen4.png" />
-      </a>
+      <>
+        <a href="/blog/atf-gun-db/" className="md:inline">
+          <img className="mx-2 md:w-5/12 md:inline border-2 mb-4 rounded-xl border-gray-300" src="https://atfgundb.com/newscreen4.png" />
+        </a>
+        <a href="/blog/donor-nexus/" className="md:inline">
+          <img className="mx-2 md:w-5/12 md:inline border-2 rounded-xl border-gray-300" src={dnScreenshot} />
+        </a>
+      </>
+     
     )
   }, 
   {
