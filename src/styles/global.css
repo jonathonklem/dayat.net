@@ -4,3 +4,15 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway');
 @import url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css');
+
+.blog-content p {
+    @apply mt-4;
+}
+
+.blog-content ul {
+    @apply list-disc px-8;
+}
+
+.blog-content a {
+    @apply font-black underline;
+}
