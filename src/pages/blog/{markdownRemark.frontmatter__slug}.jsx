@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 import SectionBlock  from "../../components/SectionBlock.tsx"
 
@@ -23,6 +24,9 @@ export default function BlogPostTemplate({
   const { frontmatter, html } = markdownRemark
   return (
     <>
+      <Helmet>
+	  <title>{frontmatter.title} : Dayat Technologies</title>
+      </Helmet>
       <main className="font-sans max-w-4xl mx-auto mt-4 h-4/6">
         <a href="/"><img className="max-w-sm" src={logo} /></a>
         <div>
