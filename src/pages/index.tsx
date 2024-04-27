@@ -27,7 +27,14 @@ const sections = [
   },
   {
     heading: "Automation",
-    body: "Are you tired of manual tasks consuming valuable time and resources in your business operations? We can develop tools to help you to seamlessly communicate with APIs and harness the power of data to streamline your processes. Say goodbye to tedious manual reporting and hello to efficient, data-driven decision-making. Even if you're already using several applications we can help you leverage the APIs of your existing tools so you can automate repetitive tasks, generate comprehensive reports, and gain actionable insights to drive your business forward. Let us help you unlock the full potential of automation and take your business to new heights."
+    body: "Are you tired of manual tasks consuming valuable time and resources in your business operations? We can develop tools to help you to seamlessly communicate with APIs and harness the power of data to streamline your processes. Say goodbye to tedious manual reporting and hello to efficient, data-driven decision-making. Even if you're already using several applications we can help you leverage the APIs of your existing tools so you can automate repetitive tasks, generate comprehensive reports, and gain actionable insights to drive your business forward. Let us help you unlock the full potential of automation and take your business to new heights.",
+    imageContainer: (
+      <>
+        <a href="/blog/fb-automation-go-trello" className="md:inline">
+          <img className="mx-2 border-2 mb-4 rounded-xl border-gray-300" src="/automation.png" />
+        </a>
+      </>
+    )
   },
   {
     heading: "Technologies Used",
