@@ -62,7 +62,7 @@ const sections = [
     )
   },
   {
-    body: String.fromCharCode(169) + " 2024 Dayat Technologies, LLC.  All rights reserved."
+    body: String.fromCharCode(169) + " 2025 Dayat Technologies, LLC.  All rights reserved."
   }
 ]
 
@@ -88,6 +88,9 @@ const IndexPage: React.FC<PageProps> = () => {
           )
         })  
       }
+      <div class="px-12 max-w-4xl mx-auto">
+        P.S. if you're looking for member management software, check out <a href="https://managememberships.com/" target="_blank" class="font-bold">ManageMemberships</a>
+      </div>
 
     </>
   )

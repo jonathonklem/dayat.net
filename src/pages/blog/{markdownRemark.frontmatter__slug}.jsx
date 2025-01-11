@@ -13,7 +13,7 @@ const sections = [
     )
   },
   {
-    body: String.fromCharCode(169) + " 2024 Dayat Technologies, LLC.  All rights reserved."
+    body: String.fromCharCode(169) + " 2025 Dayat Technologies, LLC.  All rights reserved."
   }
 ];
 
